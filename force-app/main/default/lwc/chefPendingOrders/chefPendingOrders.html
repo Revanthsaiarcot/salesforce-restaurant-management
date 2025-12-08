@@ -1,0 +1,49 @@
+<template>
+    <div class="container">
+        <div class="header">
+            <h1>👨‍🍳 Chef Kitchen Display</h1>
+            <lightning-button-icon icon-name="utility:refresh" alternative-text="Refresh" onclick={refreshList} variant="brand"></lightning-button-icon>
+        </div>
+
+        <div class="grid-container">
+            <template if:true={processedOrders}>
+                <template for:each={processedOrders} for:item="item">
+                    
+                    <div key={item.Id} class={item.cardClass}>
+                        
+                        <div class="card-header">
+                            <span class="table-badge">{item.Order__r.Table__r.Name}</span>
+                            <span class="status-text">{item.Status__c}</span>
+                        </div>
+
+                        <div class="card-body">
+                            <h2>{item.Menu_Item__r.Name}</h2>
+                            <p>Qty: <strong>{item.Quantity__c}</strong></p>
+                            <template if:true={item.Notes__c}>
+                                <p class="notes">Note: {item.Notes__c}</p>
+                            </template>
+                        </div>
+
+                        <div class="card-footer">
+                            <template if:true={item.isPending}>
+                                <button class="btn-accept" data-id={item.Id} onclick={handleAccept}>
+                                    🔥 Start Cooking
+                                </button>
+                            </template>
+                            
+                            <template if:true={item.isPreparing}>
+                                <button class="btn-ready" data-id={item.Id} onclick={handleReady}>
+                                    ✅ Mark Ready
+                                </button>
+                            </template>
+                        </div>
+                    </div>
+                </template>
+            </template>
+            
+            <template if:true={wiredOrders.error}>
+                <div class="error">Error loading orders</div>
+            </template>
+        </div>
+    </div>
+</template>

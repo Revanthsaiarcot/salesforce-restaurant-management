@@ -1,0 +1,74 @@
+<template>
+    <template if:true={isOpen}>
+        <div class="modal-backdrop">
+            <div class="receipt-card">
+                
+                <div class="receipt-header">
+                    <h2>Receipt</h2>
+                    <button class="close-btn" onclick={closeModal}>×</button>
+                </div>
+
+                <div class="receipt-body">
+                    <template if:true={isLoading}>
+                        <div class="loading-container">
+                            <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+                        </div>
+                    </template>
+
+                    <template if:true={billData}>
+                        <div class="info-row">
+                            <span>Date:</span>
+                            <span>Today</span> </div>
+                        <div class="info-row">
+                            <span>Table:</span>
+                            <span>{billData.tableName}</span> </div>
+
+                        <div class="dashed-line"></div>
+
+                        <div class="item-row" style="font-weight:bold; margin-bottom:10px;">
+                            <span class="item-name">ITEM</span>
+                            <span class="item-qty">QTY</span>
+                            <span class="item-price">AMT</span>
+                        </div>
+
+                        <template for:each={billData.items} for:item="item">
+                            <div key={item.Id} class="item-row">
+                                <span class="item-name">{item.Menu_Item__r.Name}</span>
+                                <span class="item-qty">x{item.Quantity__c}</span>
+                                <span class="item-price">
+                                    <lightning-formatted-number value={item.totalLine} format-style="decimal" minimum-fraction-digits="2"></lightning-formatted-number>
+                                </span>
+                            </div>
+                        </template>
+
+                        <div class="dashed-line"></div>
+
+                        <div class="total-row">
+                            <span>Subtotal</span>
+                            <span><lightning-formatted-number value={billData.totalAmount} format-style="currency" currency-code="USD"></lightning-formatted-number></span>
+                        </div>
+                        <div class="total-row">
+                            <span>Tax (5%)</span>
+                            <span><lightning-formatted-number value={billData.tax} format-style="currency" currency-code="USD"></lightning-formatted-number></span>
+                        </div>
+
+                        <div class="total-row grand-total">
+                            <span>TOTAL</span>
+                            <span><lightning-formatted-number value={billData.grandTotal} format-style="currency" currency-code="USD"></lightning-formatted-number></span>
+                        </div>
+                    </template>
+                </div>
+
+                <div class="receipt-footer">
+                    <button class="pay-btn" onclick={handlePay}>
+                        Pay Now 💳
+                    </button>
+                    <div style="margin-top:10px; font-size:0.8rem; color:#888;">
+                        Thank you for dining with us!
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </template>
+</template>

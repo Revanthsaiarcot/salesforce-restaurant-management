@@ -1,0 +1,127 @@
+/* Full Screen Overlay */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* The Receipt Card */
+.receipt-card {
+    background: #fff;
+    width: 400px;
+    max-width: 90%;
+    padding: 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace; /* Receipt Font */
+    display: flex;
+    flex-direction: column;
+    max-height: 90vh;
+}
+
+.receipt-header {
+    background: #333;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    position: relative;
+    border-radius: 4px 4px 0 0;
+}
+
+.receipt-header h2 {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    margin: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.receipt-body {
+    padding: 20px;
+    overflow-y: auto;
+    color: #333;
+}
+
+/* Receipt Details */
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.dashed-line {
+    border-bottom: 2px dashed #ccc;
+    margin: 15px 0;
+}
+
+/* Item List */
+.item-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.item-name { flex: 2; text-align: left; }
+.item-qty { flex: 1; text-align: center; color: #666; font-size: 0.85rem; }
+.item-price { flex: 1; text-align: right; font-weight: bold; }
+
+/* Totals Section */
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.grand-total {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-top: 10px;
+    border-top: 2px solid #333;
+    padding-top: 10px;
+}
+
+.receipt-footer {
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 0 0 4px 4px;
+    text-align: center;
+}
+
+.pay-btn {
+    width: 100%;
+    background: #10b981;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(16, 185, 129, 0.3);
+    transition: background 0.2s;
+}
+
+.pay-btn:hover { background: #059669; }
+
+.loading-container { padding: 40px; text-align: center; }

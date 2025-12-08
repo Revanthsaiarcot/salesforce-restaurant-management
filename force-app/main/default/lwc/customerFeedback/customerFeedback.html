@@ -1,0 +1,40 @@
+<template>
+    <div class="feedback-container">
+        <template if:false={submitted}>
+            <h2>Rate your Experience</h2>
+            <p>How was the food today?</p>
+            
+            <div class="star-rating">
+                <template for:each={stars} for:item="star">
+                    <span key={star.value} 
+                          class={star.class} 
+                          data-value={star.value} 
+                          onclick={handleRating}>
+                        ★
+                    </span>
+                </template>
+            </div>
+
+            <lightning-textarea label="Comments" 
+                                placeholder="Tell us what you liked..." 
+                                value={comments} 
+                                onchange={handleCommentChange}>
+            </lightning-textarea>
+
+            <button class="submit-btn" onclick={handleSubmit} disabled={isSubmitDisabled}>
+                Submit Feedback
+            </button>
+            
+            <button class="skip-btn" onclick={handleSkip}>Skip</button>
+        </template>
+
+        <template if:true={submitted}>
+            <div class="success-message">
+                <h1>🎉</h1>
+                <h2>Thank You!</h2>
+                <p>We hope to see you again soon.</p>
+                <button class="reset-btn" onclick={handleReset}>Start New Order</button>
+            </div>
+        </template>
+    </div>
+</template>

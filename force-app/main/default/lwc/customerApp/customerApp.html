@@ -1,0 +1,48 @@
+<template>
+    <div class="app-container">
+        
+        <template if:false={hasTable}>
+            <div class="error-container" style="text-align:center; padding:50px;">
+                <h1>⚠️ No Table Selected</h1>
+                <p>Please go back to the Map and select a table.</p>
+            </div>
+        </template>
+
+        <template if:true={hasTable}>
+            
+            <template if:false={showFeedback}>
+                <header class="app-header">
+                    <div class="logo">🍽️ E-Restaurant</div>
+                    <div class="header-actions">
+                        <button class="bill-btn" onclick={openBill}>🧾 Generate Bill</button>
+                        <div class="cart-icon" onclick={toggleCart}>
+                            🛒 <span class="badge">{cartCount}</span>
+                        </div>
+                    </div>
+                </header>
+
+                <div class="content-area">
+                    <div class="menu-section">
+                        <c-menu-list onaddtocart={handleAddToCart}></c-menu-list>
+                    </div>
+                    <div class={cartClass}>
+                        <c-cart-summary 
+                            cart-items={cartItems} 
+                            table-id={tableId}
+                            onclosecart={toggleCart}
+                            onorderplaced={handleOrderPlaced}
+                            onremoveitem={handleRemoveItem}>
+                        </c-cart-summary>
+                    </div>
+                </div>
+
+                <c-bill-summary table-id={tableId} onpaymentcomplete={handlePaymentSuccess}></c-bill-summary>
+            </template>
+
+            <template if:true={showFeedback}>
+                <c-customer-feedback table-id={tableId}></c-customer-feedback>
+            </template>
+        </template>
+
+    </div>
+</template>

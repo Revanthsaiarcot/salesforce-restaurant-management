@@ -1,0 +1,70 @@
+.waiter-container {
+    padding: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    min-height: 100vh;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f3f4f6;
+    margin-bottom: 20px;
+}
+
+.order-strip {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+    border-left: 6px solid #10b981; /* Green for Ready */
+}
+
+.strip-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.table-circle {
+    background: #111827;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.8rem;
+    text-align: center;
+    line-height: 1.1;
+    overflow: hidden;
+}
+
+.details h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.btn-pickup {
+    background-color: #10b981;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.btn-pickup:hover { background-color: #059669; }
+
+.empty-state { text-align: center; color: #9ca3af; margin-top: 50px; }

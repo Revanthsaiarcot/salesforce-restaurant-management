@@ -1,0 +1,112 @@
+.container {
+    padding: 1rem;
+    background-color: #f3f4f6;
+    min-height: 100vh;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Status specific styling */
+.pending { border-left: 5px solid #fbbf24; } /* Yellow */
+.preparing { border-left: 5px solid #f97316; } /* Orange */
+
+.card-header {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    background: #f9fafb;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.table-badge {
+    background: #374151;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.status-text {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+}
+
+.pending .status-text { color: #d97706; }
+.preparing .status-text { color: #ea580c; }
+
+.card-body {
+    padding: 15px;
+}
+
+.card-body h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 5px;
+}
+
+.card-footer {
+    padding: 15px;
+    background: #f9fafb;
+    text-align: center;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-accept {
+    background-color: #fbbf24;
+    color: #451a03;
+}
+.btn-accept:hover { background-color: #f59e0b; }
+
+.btn-ready {
+    background-color: #22c55e;
+    color: white;
+}
+.btn-ready:hover { background-color: #16a34a; }

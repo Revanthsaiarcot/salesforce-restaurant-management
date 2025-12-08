@@ -1,0 +1,30 @@
+<template>
+    <div class="menu-grid">
+        <template if:true={menuList}>
+            <template for:each={menuList} for:item="item">
+                <div key={item.Id} class="food-card">
+                    
+                    <div class="img-container">
+                        <img src={item.displayImage} alt={item.Name}>
+                    </div>
+                    
+                    <div class="info">
+                        <h3>{item.Name}</h3>
+                        <p class="desc">{item.Description__c}</p>
+                        
+                        <div class="action-row">
+                            <span class="price">${item.Price__c}</span>
+                            <button class="add-btn" data-id={item.Id} onclick={handleBtnClick}>
+                                Add +
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </template>
+        
+        <template if:true={error}>
+            <div class="error-msg">Error loading menu.</div>
+        </template>
+    </div>
+</template>

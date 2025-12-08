@@ -1,0 +1,33 @@
+<template>
+    <div class="waiter-container">
+        <div class="header">
+            <h1>💁 Waiter Service Queue</h1>
+            <lightning-button-icon icon-name="utility:refresh" onclick={refreshList} variant="border-filled" alternative-text="Refresh"></lightning-button-icon>
+        </div>
+
+        <div class="list-wrapper">
+            <template if:true={formattedOrders}>
+                <template for:each={formattedOrders} for:item="item">
+                    <div key={item.Id} class="order-strip">
+                        <div class="strip-left">
+                            <div class="table-circle">{item.TableName}</div>
+                            <div class="details">
+                                <h3>{item.MenuItemName}</h3>
+                                <span>Qty: {item.Quantity}</span>
+                            </div>
+                        </div>
+                        <div class="strip-right">
+                            <button class="btn-pickup" data-id={item.Id} onclick={handlePickup}>
+                                Pickup & Serve
+                            </button>
+                        </div>
+                    </div>
+                </template>
+            </template>
+            
+            <template if:false={hasOrders}>
+                 <div class="empty-state">No items ready to serve.</div>
+            </template>
+        </div>
+    </div>
+</template>

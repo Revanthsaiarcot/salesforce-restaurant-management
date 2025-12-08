@@ -1,0 +1,55 @@
+<template>
+    <div class="map-container">
+        
+        <template if:false={showFeedback}>
+            <h1>📍 Select Your Table</h1>
+            <p>Green = Available (Click to Order) | Red = Occupied (Click $ to Pay)</p>
+
+            <div class="grid">
+                <template if:true={tables}>
+                    <template for:each={tables} for:item="tbl">
+                        
+                        <div key={tbl.Id} 
+                             class={tbl.cssClass} 
+                             data-id={tbl.Id} 
+                             data-status={tbl.Status__c}
+                             onclick={handleTableClick}>
+                            
+                            <div class="table-img-container">
+                                <template if:true={tbl.displayImage}>
+                                    <img src={tbl.displayImage} alt={tbl.Name}>
+                                </template>
+                                <template if:false={tbl.displayImage}>
+                                    <div style="font-size: 3rem; padding-top:20px;">🪑</div>
+                                </template>
+                            </div>
+
+                            <div class="table-info">
+                                <div class="table-name">{tbl.Name}</div>
+                                <div class="table-status">{tbl.Status__c}</div>
+
+                                <template if:true={tbl.isOccupied}>
+                                    <button class="quick-bill-btn" 
+                                            data-id={tbl.Id} 
+                                            onclick={handleQuickBill}>
+                                        🧾 Pay Bill
+                                    </button>
+                                </template>
+                            </div>
+                        </div>
+
+                    </template>
+                </template>
+            </div>
+            
+            <c-bill-summary table-id={selectedTableId} onpaymentcomplete={handlePaymentSuccess}></c-bill-summary>
+        </template>
+
+        <template if:true={showFeedback}>
+            <div class="feedback-wrapper">
+                <c-customer-feedback table-id={selectedTableId}></c-customer-feedback>
+            </div>
+        </template>
+
+    </div>
+</template>

@@ -1,0 +1,32 @@
+<template>
+    <div class="cart-container">
+        <div class="cart-header">
+            <h2>Your Order</h2>
+            <button class="close-btn" onclick={closeCart}>✕</button>
+        </div>
+
+        <div class="cart-items">
+            <template if:true={cartItems.length}>
+                <template for:each={cartItems} for:item="item">
+                    <div key={item.menuItemId} class="cart-item">
+                        <div class="details">
+                            <h4>{item.name}</h4>
+                            <p>${item.price} x {item.quantity}</p>
+                        </div>
+                        <button class="remove-btn" data-id={item.menuItemId} onclick={removeItem}>🗑️</button>
+                    </div>
+                </template>
+            </template>
+            <template if:false={cartItems.length}>
+                <p class="empty-msg">Cart is empty</p>
+            </template>
+        </div>
+
+        <div class="cart-footer">
+            <div class="total">Total: ${totalAmount}</div>
+            <button class="place-order-btn" disabled={isCartEmpty} onclick={placeOrder}>
+                Place Order
+            </button>
+        </div>
+    </div>
+</template>
