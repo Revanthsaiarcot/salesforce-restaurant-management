@@ -84,12 +84,12 @@ Get a complete visual overview of the project, including the architecture, user 
 
 Click here to view the full Restaurant E-Management System Presentation
 
-##📄 Project Documentation
+## 📄 Project Documentation
 For a deep dive into the technical specifications, data model, and functional requirements, refer to the full project blueprint.
 
-📄 Salesforce Restaurant E-Management Blueprint.docx (Note: Make sure to upload your .docx file to your GitHub repository root folder for this link to work!)
+### 📄 Salesforce Restaurant E-Management Blueprint.docx (Note: Make sure to upload your .docx file to your GitHub repository root folder for this link to work!)
 
-⚡ Installation & Setup
+## ⚡ Installation & Setup
 Follow these steps to deploy the application to your own Salesforce environment.
 
 1️⃣ Prerequisites
@@ -117,7 +117,7 @@ Select SFDX: Deploy Source to Org.
 4️⃣ Post-Deployment Setup
 Once the code is deployed, you need to configure the data:
 
-🖼️ Upload Images:
+## 🖼️ Upload Images:
 
 Ensure the RestaurantImages Static Resource is deployed (check force-app/main/default/staticresources).
 
@@ -140,7 +140,7 @@ Create a second page named "Kitchen Display" and drop the chefPendingOrders comp
 
 Activate both pages for your profile.
 
-📸 Usage Guide (The "Happy Path")
+# 📸 Usage Guide (The "Happy Path")
 Open the App: Navigate to the Restaurant Ordering tab in Salesforce.
 
 Select a Table: Click on a Green (Available) table card.
@@ -155,14 +155,14 @@ Pay & Finish: Go back to the Table Map, click the Red (Occupied) table, and sele
 
 Feedback: Submit a 5-Star Rating ⭐ to reset the table and complete the loop!
 
-🔮 Future Enhancements
+## 🔮 Future Enhancements
 [ ] Inventory Integration: Auto-decrement stock levels when orders are placed.
 
 [ ] Payment Gateway: Integrate Stripe API for real-time credit card processing.
 
 [ ] Live Notifications: Implement Platform Events for instant push notifications to the Kitchen.
 
-📬 Contact
+## 📬 Contact
 Have questions or want to connect?
 
 Developer: Revanth Sai Arcot
