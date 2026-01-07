@@ -79,16 +79,6 @@ force-app
          └── staticresources
              └── RestaurantImages             // Stores food & table images
 ```
-## 📊 Project Presentation
-Get a complete visual overview of the project, including the architecture, user flows, and future roadmap.
-
-Click here to view the full Restaurant E-Management System Presentation
-
-## 📄 Project Documentation
-For a deep dive into the technical specifications, data model, and functional requirements, refer to the full project blueprint.
-
-### 📄 Salesforce Restaurant E-Management Blueprint.docx (Note: Make sure to upload your .docx file to your GitHub repository root folder for this link to work!)
-
 ## ⚡ Installation & Setup
 Follow these steps to deploy the application to your own Salesforce environment.
 
@@ -102,9 +92,10 @@ Git installed on your machine.
 ### 2️⃣ Clone the Repository
 Open your terminal and run:
 
-Bash
 
-git clone [https://github.com/Revanthsaiarcot/salesforce-restaurant-management.git](https://github.com/Revanthsaiarcot/salesforce-restaurant-management.git)
+```
+git clone https://github.com/yourusername/salesforce-restaurant-management.git
+```
 ### 3️⃣ Deploy to Salesforce
 Open the project folder in VS Code.
 
@@ -119,15 +110,15 @@ Once the code is deployed, you need to configure the data:
 
 - **🖼️ Upload Images:**
 
-Ensure the RestaurantImages Static Resource is deployed (check force-app/main/default/staticresources).
+-Ensure the RestaurantImages Static Resource is deployed (check force-app/main/default/staticresources).
 
 - **🗂️ Create Data:**
 
-Create 4-5 Restaurant Table records (e.g., "Table 1", "Table 2").
+-Create 4-5 Restaurant Table records (e.g., "Table 1", "Table 2").
 
-Create Menu Item records (e.g., "Burger", "Pizza").
+-Create Menu Item records (e.g., "Burger", "Pizza").
 
-Important: Set the Image URL field on these records to match the filenames in your Static Resource (e.g., burger.jpg, pizza.png).
+-Important: Set the Image URL field on these records to match the filenames in your Static Resource (e.g., burger.jpg, pizza.png).
 
 ### 5️⃣ Add to App Builder
 Go to Setup > Lightning App Builder.
@@ -162,11 +153,22 @@ Feedback: Submit a 5-Star Rating ⭐ to reset the table and complete the loop!
 
 [ ] Live Notifications: Implement Platform Events for instant push notifications to the Kitchen.
 
-## 📬 Contact
-Have questions or want to connect?
+## 🤝 Contributing
 
-Developer: Revanth Sai Arcot
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-LinkedIn: [Link to your LinkedIn Profile]
+## 🙏 Acknowledgments
 
-Email: [Your Email Address]
+* Salesforce Lightning Design System (SLDS) for modern UI styling
+* Salesforce Platform for secure cloud hosting and database management
+* VS Code Salesforce Extension Pack for seamless development
+* The Trailblazer Community for resources and support
+
+<br/>
+<p align="center">
+  Made with ❤️ by Revanth Sai Arcot
+</p>
