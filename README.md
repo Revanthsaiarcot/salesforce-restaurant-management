@@ -78,12 +78,13 @@ force-app
          │   └── billSummary                  // Receipt Generator
          └── staticresources
              └── RestaurantImages             // Stores food & table images
-📊 Project Presentation
+```
+## 📊 Project Presentation
 Get a complete visual overview of the project, including the architecture, user flows, and future roadmap.
 
 Click here to view the full Restaurant E-Management System Presentation
 
-📄 Project Documentation
+##📄 Project Documentation
 For a deep dive into the technical specifications, data model, and functional requirements, refer to the full project blueprint.
 
 📄 Salesforce Restaurant E-Management Blueprint.docx (Note: Make sure to upload your .docx file to your GitHub repository root folder for this link to work!)
