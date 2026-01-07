@@ -92,20 +92,20 @@ For a deep dive into the technical specifications, data model, and functional re
 ## ⚡ Installation & Setup
 Follow these steps to deploy the application to your own Salesforce environment.
 
-1️⃣ Prerequisites
+### 1️⃣ Prerequisites
 A Salesforce Developer Org.
 
 VS Code installed with the Salesforce Extension Pack.
 
 Git installed on your machine.
 
-2️⃣ Clone the Repository
+### 2️⃣ Clone the Repository
 Open your terminal and run:
 
 Bash
 
 git clone [https://github.com/Revanthsaiarcot/salesforce-restaurant-management.git](https://github.com/Revanthsaiarcot/salesforce-restaurant-management.git)
-3️⃣ Deploy to Salesforce
+### 3️⃣ Deploy to Salesforce
 Open the project folder in VS Code.
 
 Authorize your Org: Ctrl+Shift+P > SFDX: Authorize an Org.
@@ -114,14 +114,14 @@ Right-click the force-app folder in the file explorer.
 
 Select SFDX: Deploy Source to Org.
 
-4️⃣ Post-Deployment Setup
+### 4️⃣ Post-Deployment Setup
 Once the code is deployed, you need to configure the data:
 
-## 🖼️ Upload Images:
+- **🖼️ Upload Images:**
 
 Ensure the RestaurantImages Static Resource is deployed (check force-app/main/default/staticresources).
 
-🗂️ Create Data:
+- **🗂️ Create Data:**
 
 Create 4-5 Restaurant Table records (e.g., "Table 1", "Table 2").
 
@@ -129,7 +129,7 @@ Create Menu Item records (e.g., "Burger", "Pizza").
 
 Important: Set the Image URL field on these records to match the filenames in your Static Resource (e.g., burger.jpg, pizza.png).
 
-5️⃣ Add to App Builder
+### 5️⃣ Add to App Builder
 Go to Setup > Lightning App Builder.
 
 Create a new App Page named "Restaurant Ordering".
@@ -140,7 +140,7 @@ Create a second page named "Kitchen Display" and drop the chefPendingOrders comp
 
 Activate both pages for your profile.
 
-# 📸 Usage Guide (The "Happy Path")
+## 📸 Usage Guide (The "Happy Path")
 Open the App: Navigate to the Restaurant Ordering tab in Salesforce.
 
 Select a Table: Click on a Green (Available) table card.
